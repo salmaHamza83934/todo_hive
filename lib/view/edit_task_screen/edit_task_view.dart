@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_local_storage/core/shared_widget/task_form_field.dart';
 import 'package:flutter_local_storage/core/shared_widget/task_date_widget.dart';
-import 'package:flutter_local_storage/data/models/task_model.dart';
-import 'package:flutter_local_storage/ui/cubit/task_cubit.dart';
-import 'package:flutter_local_storage/ui/cubit/task_states.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../models/task_model.dart';
+import '../../view_model/cubit/task_cubit.dart';
+import '../../view_model/cubit/task_states.dart';
 
 class EditTaskView extends StatefulWidget {
   TaskModel task;

@@ -24,6 +24,12 @@ class UpdateTaskSuccessState extends TaskStates {}
 
 
 ///Delete task state
+class DeleteTaskErrorState extends TaskStates {
+  final String errMessage;
+
+  DeleteTaskErrorState(this.errMessage);
+}
+
 class DeleteTaskSuccessState extends TaskStates {}
 
 

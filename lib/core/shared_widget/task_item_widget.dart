@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_local_storage/ui/cubit/task_cubit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 
-import '../../data/models/task_model.dart';
+import '../../models/task_model.dart';
+import '../../view_model/cubit/task_cubit.dart';
+
 
 class TaskItemWidget extends StatefulWidget {
   TaskModel taskModel;

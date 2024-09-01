@@ -3,12 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_local_storage/core/blocObserver/myBlocObserver.dart';
 import 'package:flutter_local_storage/core/constants/constants.dart';
 import 'package:flutter_local_storage/core/theme/theme.dart';
-import 'package:flutter_local_storage/data/models/task_model.dart';
-import 'package:flutter_local_storage/ui/cubit/task_cubit.dart';
+import 'package:flutter_local_storage/view/home_screen/home_view.dart';
+import 'package:flutter_local_storage/view_model/cubit/task_cubit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/adapters.dart';
-
-import 'ui/home_screen/home_view.dart';
+import 'models/task_model.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();

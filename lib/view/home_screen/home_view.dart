@@ -2,13 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_local_storage/core/shared_widget/task_item_widget.dart';
-import 'package:flutter_local_storage/ui/cubit/task_cubit.dart';
-import 'package:flutter_local_storage/ui/cubit/task_states.dart';
-import 'package:flutter_local_storage/ui/edit_task_screen/edit_task_view.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
+import '../../view_model/cubit/task_cubit.dart';
+import '../../view_model/cubit/task_states.dart';
 import '../add_task_screen/add_task_view.dart';
+import '../edit_task_screen/edit_task_view.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});

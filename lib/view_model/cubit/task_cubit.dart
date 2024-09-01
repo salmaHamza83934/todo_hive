@@ -1,8 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_local_storage/core/constants/constants.dart';
-import 'package:flutter_local_storage/data/models/task_model.dart';
-import 'package:flutter_local_storage/ui/cubit/task_states.dart';
+import 'package:flutter_local_storage/view_model/cubit/task_states.dart';
 import 'package:hive/hive.dart';
+
+import '../../models/task_model.dart';
 
 class TaskViewModel extends Cubit<TaskStates>{
   TaskViewModel():super(TaskInitialState());
@@ -23,19 +24,21 @@ class TaskViewModel extends Cubit<TaskStates>{
       getAllTasks();
     }
   }
+
+
   updateTaskStatus(TaskModel task, bool isDone) async {
     try {
       task.isDone = isDone;
-      await task.save(); // Save the updated task
+      await task.save();
       emit(UpdateTaskSuccessState());
     } catch (e) {
       emit(UpdateTaskErrorState(e.toString()));
     }
     getAllTasks();
   }
+
   updateTask(TaskModel task, TaskModel updatedTask) async {
     try {
-      // Update the task with new values
       task.name = updatedTask.name;
       task.notes = updatedTask.notes;
       task.dateTime = updatedTask.dateTime;
@@ -46,10 +49,15 @@ class TaskViewModel extends Cubit<TaskStates>{
     } catch (e) {
       emit(UpdateTaskErrorState(e.toString()));
     }}
+
+
   deleteTask(TaskModel task){
     task.delete();
+    emit(DeleteTaskSuccessState());
     getAllTasks();
   }
+
+
   getAllTasks() {
     tasks = Hive.box<TaskModel>(tasksBoxName).values.toList();
     emit(GetTasksSuccessState());
